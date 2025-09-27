@@ -1,0 +1,17 @@
+{
+  "name": "epayco-wallet-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Backend services for ePaycoWallet",
+  "workspaces": [
+    "database-service",
+    "gateway-service"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "dev:database": "npm --workspace database-service run dev",
+    "dev:gateway": "npm --workspace gateway-service run dev",
+    "start:database": "npm --workspace database-service run start",
+    "start:gateway": "npm --workspace gateway-service run start"
+  }
+}
