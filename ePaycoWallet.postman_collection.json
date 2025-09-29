@@ -1,0 +1,170 @@
+{
+  "info": {
+    "name": "ePaycoWallet Gateway",
+    "_postman_id": "ePaycoWallet-gateway-collection",
+    "description": "Colección solo para el gateway-service de ePaycoWallet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Registrar Cliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "*/*" },
+          { "key": "Accept-Language", "value": "es-ES,es;q=0.9,la;q=0.8" },
+          { "key": "Connection", "value": "keep-alive" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Origin", "value": "http://localhost:3000" },
+          { "key": "Referer", "value": "http://localhost:3000/" },
+          { "key": "Sec-Fetch-Dest", "value": "empty" },
+          { "key": "Sec-Fetch-Mode", "value": "cors" },
+          { "key": "Sec-Fetch-Site", "value": "same-site" },
+          { "key": "User-Agent", "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" },
+          { "key": "sec-ch-ua", "value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\"" },
+          { "key": "sec-ch-ua-mobile", "value": "?0" },
+          { "key": "sec-ch-ua-platform", "value": "\"Windows\"" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"document\": \"123456789\",\n  \"names\": \"julio yepez\",\n  \"email\": \"julio@gmail.com\",\n  \"phone\": \"123456789\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/clients/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "clients", "register"]
+        }
+      }
+    },
+    {
+      "name": "Recargar Wallet",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "*/*" },
+          { "key": "Accept-Language", "value": "es-ES,es;q=0.9,la;q=0.8" },
+          { "key": "Connection", "value": "keep-alive" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Origin", "value": "http://localhost:3000" },
+          { "key": "Referer", "value": "http://localhost:3000/" },
+          { "key": "Sec-Fetch-Dest", "value": "empty" },
+          { "key": "Sec-Fetch-Mode", "value": "cors" },
+          { "key": "Sec-Fetch-Site", "value": "same-site" },
+          { "key": "User-Agent", "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" },
+          { "key": "sec-ch-ua", "value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\"" },
+          { "key": "sec-ch-ua-mobile", "value": "?0" },
+          { "key": "sec-ch-ua-platform", "value": "\"Windows\"" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"document\": \"1234567\",\n  \"phone\": \"123456789\",\n  \"amount\": 5\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/wallets/top-up",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "wallets", "top-up"]
+        }
+      }
+    },
+    {
+      "name": "Iniciar Pago",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "*/*" },
+          { "key": "Accept-Language", "value": "es-ES,es;q=0.9,la;q=0.8" },
+          { "key": "Connection", "value": "keep-alive" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Origin", "value": "http://localhost:3000" },
+          { "key": "Referer", "value": "http://localhost:3000/" },
+          { "key": "Sec-Fetch-Dest", "value": "empty" },
+          { "key": "Sec-Fetch-Mode", "value": "cors" },
+          { "key": "Sec-Fetch-Site", "value": "same-site" },
+          { "key": "User-Agent", "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" },
+          { "key": "sec-ch-ua", "value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\"" },
+          { "key": "sec-ch-ua-mobile", "value": "?0" },
+          { "key": "sec-ch-ua-platform", "value": "\"Windows\"" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"document\": \"1234567\",\n  \"phone\": \"123456789\",\n  \"amount\": 6,\n  \"description\": \"\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/payments/initiate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "payments", "initiate"]
+        }
+      }
+    },
+    {
+      "name": "Confirmar Pago",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "*/*" },
+          { "key": "Accept-Language", "value": "es-ES,es;q=0.9,la;q=0.8" },
+          { "key": "Connection", "value": "keep-alive" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Origin", "value": "http://localhost:3000" },
+          { "key": "Referer", "value": "http://localhost:3000/" },
+          { "key": "Sec-Fetch-Dest", "value": "empty" },
+          { "key": "Sec-Fetch-Mode", "value": "cors" },
+          { "key": "Sec-Fetch-Site", "value": "same-site" },
+          { "key": "User-Agent", "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" },
+          { "key": "sec-ch-ua", "value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\"" },
+          { "key": "sec-ch-ua-mobile", "value": "?0" },
+          { "key": "sec-ch-ua-platform", "value": "\"Windows\"" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sessionId\": \"2a884992-8c68-4f63-b679-8b821a3207d0\",\n  \"token\": \"833776\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/payments/confirm",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "payments", "confirm"]
+        }
+      }
+    },
+    {
+      "name": "Consultar Saldo",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept", "value": "*/*" },
+          { "key": "Accept-Language", "value": "es-ES,es;q=0.9,la;q=0.8" },
+          { "key": "Connection", "value": "keep-alive" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Origin", "value": "http://localhost:3000" },
+          { "key": "Referer", "value": "http://localhost:3000/" },
+          { "key": "Sec-Fetch-Dest", "value": "empty" },
+          { "key": "Sec-Fetch-Mode", "value": "cors" },
+          { "key": "Sec-Fetch-Site", "value": "same-site" },
+          { "key": "User-Agent", "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" },
+          { "key": "sec-ch-ua", "value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\"" },
+          { "key": "sec-ch-ua-mobile", "value": "?0" },
+          { "key": "sec-ch-ua-platform", "value": "\"Windows\"" }
+        ],
+        "url": {
+          "raw": "http://localhost:4000/api/wallets/balance?document=1234567&phone=123456789",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "wallets", "balance"],
+          "query": [
+            { "key": "document", "value": "1234567" },
+            { "key": "phone", "value": "123456789" }
+          ]
+        }
+      }
+    }
+  ]
+}
